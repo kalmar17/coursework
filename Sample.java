@@ -58,10 +58,11 @@ public class Sample {
 
         double AbsoluteAcc = 0;
         double Relative = 0;
+
         file.write("ListPlot3D[{"+"{"+(0.0)+","+(0.0)+","+W[0][0]+"}");
+
         for(int i=0;i<W.length;i++){
             for(int j=1;j<W[0].length;j++){
-                //         file.write(String.format("%.3f",W[i][j])+"("+i+"  "+j+"), ");
                 file.write(",{"+(i*h)+","+(j*tau)+","+W[i][j]+"}");
                 if(AbsoluteAcc < Math.abs(W[i][j]-func(i*h,j*tau))){
                     AbsoluteAcc = Math.abs(W[i][j]-func(i*h,j*tau));
@@ -72,8 +73,7 @@ public class Sample {
         }
         file.write("}, Mesh -> All]");
         file.close();
-
-
+        
         System.out.println( timeSerialSpent + " nano!");
         System.out.println("AbsoluteAcc = "+AbsoluteAcc);
         System.out.println("Relative = "+Relative);
