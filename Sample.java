@@ -54,7 +54,7 @@ public class Sample {
         long endSerialTime = System.nanoTime();
         long timeSerialSpent = endSerialTime - startSerialTime;
 
-        FileWriter file = new FileWriter("test.txt");
+        FileWriter file = new FileWriter("testOpenMP.txt");
 
         double AbsoluteAcc = 0;
         double Relative = 0;
@@ -73,7 +73,7 @@ public class Sample {
         }
         file.write("}, Mesh -> All]");
         file.close();
-        
+
         System.out.println( timeSerialSpent + " nano!");
         System.out.println("AbsoluteAcc = "+AbsoluteAcc);
         System.out.println("Relative = "+Relative);

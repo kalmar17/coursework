@@ -43,7 +43,7 @@ public class Main {
         long endSerialTime = System.nanoTime();
         long timeSerialSpent = endSerialTime - startSerialTime;
 
-        FileWriter file = new FileWriter("test.txt");
+        FileWriter file = new FileWriter("testSerial.txt");
 
         double AbsoluteAcc = 0;
         double Relative = 0;
@@ -76,7 +76,7 @@ public class Main {
         }
         long endTime   = System.nanoTime();
         long totalTime = endTime - startTime;
-        FileWriter file1 = new FileWriter("test2.txt");
+        FileWriter file1 = new FileWriter("testStreamAPI.txt");
 
         double AbsoluteAccParall = 0;
         double RelativeParall = 0;
