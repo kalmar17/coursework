@@ -47,10 +47,11 @@ public class Main {
 
         double AbsoluteAcc = 0;
         double Relative = 0;
+
         file.write("ListPlot3D[{"+"{"+(0.0)+","+(0.0)+","+W[0][0]+"}");
+
         for(int i=0;i<W.length;i++){
             for(int j=1;j<W[0].length;j++){
-       //         file.write(String.format("%.3f",W[i][j])+"("+i+"  "+j+"), ");
                 file.write(",{"+(i*h)+","+(j*tau)+","+W[i][j]+"}");
                 if(AbsoluteAcc < Math.abs(W[i][j]-func(i*h,j*tau))){
                     AbsoluteAcc = Math.abs(W[i][j]-func(i*h,j*tau));
@@ -79,10 +80,11 @@ public class Main {
 
         double AbsoluteAccParall = 0;
         double RelativeParall = 0;
+
         file1.write("ListPlot3D[{"+"{"+(0.0)+","+(0.0)+","+W[0][0]+"}");
+
         for(int i=0;i<W.length;i++){
             for(int j=1;j<W[0].length;j++){
-                //         file.write(String.format("%.3f",W[i][j])+"("+i+"  "+j+"), ");
                 file1.write(",{"+(i*h)+","+(j*tau)+","+W[i][j]+"}");
                 if(AbsoluteAccParall < Math.abs(W[i][j]-func(i*h,j*tau))){
                     AbsoluteAccParall = Math.abs(W[i][j]-func(i*h,j*tau));
@@ -98,7 +100,8 @@ public class Main {
         System.out.println("2) программа выполнялась " + totalTime + " наносекунд");
         System.out.println("AbsoluteAcc = "+ AbsoluteAcc);
         System.out.println("Relative = "+ Relative);
-
+        System.out.println("AbsoluteAccParallel = "+ AbsoluteAccParall);
+        System.out.println("RelativeParallel = "+ RelativeParall);
     }
 }
 
